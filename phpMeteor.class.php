@@ -148,6 +148,7 @@ function proccessMPDU($mpdu,$vcdu) {
 
 //print_r($packets[1]);
 
+// Join X hex values in binary
 function somaBinario($valores) {
 	
 	$saida = "";
@@ -172,7 +173,10 @@ function somaBinario($valores) {
 	
 }
 
-// Debuga
+
+
+
+// Debug / test
 
 $saida = "";
 
@@ -227,6 +231,7 @@ for ($x=0;$x<sizeof($vcdus);$x++) {
 //echo nl2br($saida);
 echo $saida;
 
+// function o show data stored in $vcdus
 function mostraDados($vcdu,$pdu) {
 	
 	global $vcdus;
@@ -236,7 +241,6 @@ function mostraDados($vcdu,$pdu) {
 	
 	echo "\nseqCount: ";
 	echo $vcdus[$vcdu]['packets'][$pdu]['SEQCOUNT'];
-	
 	
 	
 	echo "\nN_MCU: ";
@@ -260,14 +264,3 @@ mostraDados(7,4);
 mostraDados(8,0);
 
 mostraDados(8,1);
-/*
-$final = null;
-for ($x=0;$x<sizeof($vcdus[2]['packets'][0]['DATA']);$x++) {
-	$final = $final . pack("C",$vcdus[2]['packets'][0]['DATA'][$x]);
-}
-*/
-//header('Content-Type: image/jpeg;');
-
-//$im = imagecreatefromstring($final);
-
-//imagejpeg($im);
